@@ -1,9 +1,10 @@
 import React from 'react'
 import "./Cita.css"
 
-export default function Cita({cita, setListado, lista}) {
+export default function Cita({index, cita, setListado, lista}) {
     const eliminarCita =()=>{
-        let aux=lista.filter((citaa)=>{citaa.id!=cita.id})
+        let aux=[...lista]
+        aux.splice(index,1);
         setListado(aux);
     }
 

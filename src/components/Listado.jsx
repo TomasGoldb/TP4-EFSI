@@ -7,8 +7,8 @@ export default function Listado({setListado, listaCitas}) {
     <section>
         <h2>administra tus citas</h2>
         {
-            listaCitas.map((citaa)=>((
-                <Cita key={citaa.id} cita={citaa} setListado={setListado} lista={listaCitas}/>
+            listaCitas.map((citaa,index)=>((
+                <Cita index={index} key={index} cita={citaa} setListado={setListado} lista={listaCitas}/>
             )))
         }
     </section>

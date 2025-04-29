@@ -23,7 +23,6 @@ export default function Formulario({setListado, listado}) {
         let aux=[...listado]
         aux.push(cita)
         setListado(aux);
-        console.log(listado);
     }
  
     return (

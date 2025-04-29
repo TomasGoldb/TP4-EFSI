@@ -5,22 +5,14 @@ import Listado from './components/Listado'
 import Formulario from './components/formulario'
 
 function App() {
-  const[listado, setListado]=useState([
-    {
-      "nombre": "juancito",
-      "dueno": "ian jolito",
-      "fecha": new Date(),
-      "hora": new Date(),
-      "sintomas": "kfjrlfrjf"
-    }
-  ]);
+  const[listado, setListado]=useState([]);
 
   return (
     <div className='appp'>
       <h1>Administrador de pacientes</h1>
       <div className="contenedor-form-list">
-        <Formulario setListado={setListado} />
-        <Listado listaCitas={listado} />
+        <Formulario setListado={setListado} listado={listado} />
+        <Listado setListado={setListado} listaCitas={listado} />
       </div>
     </div>
   )

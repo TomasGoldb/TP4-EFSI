@@ -2,14 +2,14 @@ import React from 'react'
 import Cita from './Cita'
 import "/src/components/Listado.css"
 
-export default function Listado({listaCitas}) {
-  return (
+export default function Listado({setListado, listaCitas}) {
+    return (
     <section>
         <h2>administra tus citas</h2>
         {
-            listaCitas.map((citaa,index)=>{
-                <Cita key={index} cita={citaa}  />
-            })
+            listaCitas.map((citaa)=>((
+                <Cita key={citaa.id} cita={citaa} setListado={setListado} lista={listaCitas}/>
+            )))
         }
     </section>
   )

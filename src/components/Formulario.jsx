@@ -23,6 +23,11 @@ export default function Formulario({setListado, listado}) {
         let aux=[...listado]
         aux.push(cita)
         setListado(aux);
+        setNombre("");
+        setDueno("");
+        setFecha("");
+        setHora("");
+        setSintomas("");
     }
  
     return (
@@ -30,23 +35,23 @@ export default function Formulario({setListado, listado}) {
         <h2>crear mi cita</h2>
         <div>
             <label>Nombre mascota</label>
-            <input type="text" placeholder='Nombre mascota' onChange={(e)=>setNombre(e.target.value)} />
+            <input type="text" value={nombre} placeholder='Nombre mascota' onChange={(e)=>setNombre(e.target.value)} />
         </div>
         <div>
             <label>Nombre dueño</label>
-            <input type="text" placeholder='Nombre dueño' onChange={(e)=>setDueno(e.target.value)} />
+            <input type="text" value={dueno} placeholder='Nombre dueño' onChange={(e)=>setDueno(e.target.value)} />
         </div>
         <div>
             <label>Fecha</label>
-            <input type="date" onChange={(e)=>setFecha(e.target.value)} />
+            <input type="date" value={fecha} onChange={(e)=>setFecha(e.target.value)} />
         </div>
         <div>
             <label>Hora</label>
-            <input type="time" onChange={(e)=>setHora(e.target.value)} />
+            <input type="time" value={hora} onChange={(e)=>setHora(e.target.value)} />
         </div>
         <div>
             <label>Síntomas</label>
-            <textarea onChange={(e)=>setSintomas(e.target.value)} /> 
+            <textarea onChange={(e)=>setSintomas(e.target.value)} value={sintomas} /> 
             </div>
             <button onClick={agregarCita}>Agregar cita</button>
     </form>

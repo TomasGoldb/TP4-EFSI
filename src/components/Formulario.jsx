@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Swal from 'sweetalert2';
 import "/src/components/Formulario.css"
 
 export default function Formulario({setListado, listado}) {
@@ -7,6 +8,7 @@ export default function Formulario({setListado, listado}) {
 
     const agregarCita=(e)=>{
         e.preventDefault();
+        if(cita.dueno!=null && cita.nombre!=null && cita.fecha!=null && cita.hora!=null && cita.sintomas!=null){
         const citaa={
             id: cita.idAutNum,
             nombre: cita.nombre,
@@ -19,7 +21,21 @@ export default function Formulario({setListado, listado}) {
         let aux=[...listado]
         aux.push(citaa)
         setListado(aux);
-        setCita({});
+        setCita({
+            nombre: "",
+            dueno: "",
+            fecha: "",
+            hora: "",
+            sintomas: ""
+        });
+
+    }else {
+        Swal.fire({
+            title: "ERROR! Hay campos vacíos.",
+            icon: "error",
+            draggable: true
+          });
+    }
     }
  
     return (

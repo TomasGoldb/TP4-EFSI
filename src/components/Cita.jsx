@@ -6,6 +6,7 @@ export default function Cita({index, cita, setListado, lista}) {
         let aux=[...lista]
         aux.splice(index,1);
         setListado(aux);
+        localStorage.setItem('tareas', JSON.stringify(aux));
     }
 
     return (
